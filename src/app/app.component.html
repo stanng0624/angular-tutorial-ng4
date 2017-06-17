@@ -1,3 +1,17 @@
-<h1>
-  {{title}}
-</h1>
+<!--<app-header (menuItemButtonSelected)="onMenuItemChanged($event)"></app-header>-->
+<app-header></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <!--<h1 class="h1 jasmine-title">My app!</h1>-->
+      <!--<button (click)="onClickButton()">Hi!</button>-->
+      <!--<hr/>-->
+      <!--<app-recipes-->
+        <!--*ngIf="isMenuItemSelected('recipe')"-->
+
+      <!--&gt;</app-recipes>-->
+      <!--<app-shopping-list *ngIf="isMenuItemSelected('shopping-list')"></app-shopping-list>-->
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
