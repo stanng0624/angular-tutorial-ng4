@@ -1,3 +1,6 @@
+# This is my tutorial project!
+Hello, this is my first tutorial project!!!!
+
 # Ng4CompleteGuide
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.3.
