@@ -1,4 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import * as firebase from 'firebase';
+
 import { LoggingService } from './logging.service';
 
 import { Recipe } from './recipes/recipe.model';
@@ -22,6 +24,12 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    // Initialize Firebase
+    const config = {
+      apiKey: 'AIzaSyBbhaqkbBasrgu-SgePc2pRIXvlDT6vG0c',
+      authDomain: 'ng-recipe-book-15fab.firebaseapp.com',
+    };
+    firebase.initializeApp(config);
     // this.selectedMenu = 'recipe';
   }
 
