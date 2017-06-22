@@ -20,7 +20,7 @@ export class RecipesComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    if (!this.authService.isAuthorized()) {
+    if (!this.authService.isAuthenticated()) {
       console.log('Not autherized!');
 
       this.router.navigate(['../signin'], {relativeTo: this.route});

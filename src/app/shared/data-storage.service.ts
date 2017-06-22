@@ -16,14 +16,20 @@ export class DataStorageService {
   }
 
   storeRecipes() {
+    if (!this.authService.isAuthenticated()) {
+      return null;
+    }
+
+    const token = this.authService.getToken();
+
     return this.http.put(
-      this.url + 'recipe.json',
+      this.url + 'recipe.json?auth=' + token,
       this.recipeService.getRecipes()
     );
   }
 
   getRecipes(populateDataIfNoDataFound = false) {
-    if (!this.authService.isAuthorized()) {
+    if (!this.authService.isAuthenticated()) {
       return null;
     }
 

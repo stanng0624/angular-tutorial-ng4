@@ -3,8 +3,6 @@ import * as firebase from 'firebase';
 
 import { LoggingService } from './logging.service';
 
-import { Recipe } from './recipes/recipe.model';
-
 // import { Logger } from 'log4js'
 // const Logger = require('log4js');
 
@@ -24,6 +22,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+
     // Initialize Firebase
     const config = {
       apiKey: 'AIzaSyBbhaqkbBasrgu-SgePc2pRIXvlDT6vG0c',

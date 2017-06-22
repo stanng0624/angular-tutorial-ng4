@@ -4,8 +4,9 @@ import {
   // Output,
 } from '@angular/core';
 
-import { DataStorageService } from '../shared/data-storage.service';
+import { DataStorageService } from '../../shared/data-storage.service';
 import { Response } from '@angular/http';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -15,7 +16,8 @@ import { Response } from '@angular/http';
 export class HeaderComponent {
   // @Output() menuItemButtonSelected = new EventEmitter<string> ();
 
-  constructor(private dataStorageService: DataStorageService) { }
+  constructor(public authService: AuthService,
+              private dataStorageService: DataStorageService) { }
 
   onSaveData() {
     this.dataStorageService.storeRecipes()
@@ -29,6 +31,10 @@ export class HeaderComponent {
 
   onFetchData() {
     this.dataStorageService.getRecipes();
+  }
+
+  onLogout() {
+    this.authService.logout();
   }
 
   // onMenuItemButtonClicked(menuButtonName: string) {
